@@ -58,5 +58,5 @@ After all the installation is done, serve the application using:
 
 ```sh
 $ php artisan serve
-
+```
 and point to http://localhost:8000
