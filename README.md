@@ -1,17 +1,7 @@
-<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p> -->
 
-## About EC-Business
+## About UrL Shortner
 
-A tool for shortning your URL
-
-<!-- - [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
- -->
+Url shortner is a tool for generating short URL linked to your original url
 
  ## Getting Started
  To install this web application, there are some certain critaria that must be met:
@@ -19,6 +9,7 @@ A tool for shortning your URL
  1. Install composer [`composer`](https://getcomposer.org/)
  2. Install [`nodejs`](https://nodejs.org) and [`npm`](https://npmjs.com)
  3. Create a database
+ 4. PHP 8.0 or higher
 
 ## Installation
 
@@ -40,11 +31,32 @@ generate the app key by running:
 $ php artisan key:generate
 ```
 
+Create a database, and set the database variable in the .env file:
 
+```sh
+DB_CONNECTION=pgsql                # or mysql
+DB_HOST=127.0.0.1
+DB_PORT=5432                       # or 3306 for mysql
+DB_DATABASE=url_shortner           # database name
+DB_USERNAME=your_db_name           # database password
+DB_PASSWORD=your_db_password
+```
 
-Then install all node dependencies, [`nodejs`](https://nodejs.org) and [`npm`](https://npmjs.com) are required to install and use this web application:
+Then migrate the database table using:
+
+```sh
+$ php artisan migrate
+```
+
+Install all node dependencies, [`nodejs`](https://nodejs.org) and [`npm`](https://npmjs.com) are required to install and use this web application:
 
 ```sh
 $ npm install && npm run dev
 ```
 
+After all the installation is done, serve the application using:
+
+```sh
+$ php artisan serve
+
+and point to http://localhost:8000
